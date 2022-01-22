@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"log"
 	"net/http"
@@ -8,6 +9,7 @@ import (
 )
 
 func main() {
+	flag.Parse()
 	http.HandleFunc("/", handler)
 	log.Fatal(http.ListenAndServe("127.0.0.1:8080", nil))
 }
